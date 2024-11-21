@@ -1,0 +1,54 @@
+---
+const { letter, className, height, width, viewBox, translate } = Astro.props
+---
+
+<svg
+  class={`letras ${className}`}
+  height={height}
+  width={width}
+  viewBox={viewBox}
+>
+  <path transform=`scale(1,-1) translate(${translate})` d={letter}></path>
+</svg>
+
+<style is:global>
+  .letras {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    animation: fade-in-bck 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) var(--delay)
+      both;
+  }
+  .letra-L {
+    grid-area: 14/10 / span 1;
+    --delay: 0.8s;
+  }
+
+  .letra-E {
+    grid-area: 15/12 / span 1;
+    --delay: 1s;
+  }
+
+  .letra-N {
+    grid-area: 14/14 / span 1;
+    --delay: 1.2s;
+  }
+
+  .letra-N2 {
+    grid-area: 15/16 / span 1;
+    margin-left: 25px;
+    --delay: 1.4s;
+  }
+
+  .letra-Y {
+    grid-area: 14/18 / span 1;
+    margin-left: 10px;
+    --delay: 1.6s;
+  }
+
+  .letra-N3 {
+    grid-area: 15/20 / span 1;
+    margin-left: 10px;
+    --delay: 1.8s;
+  }
+</style>

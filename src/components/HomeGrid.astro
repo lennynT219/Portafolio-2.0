@@ -1,0 +1,73 @@
+<>
+  {
+    Array.from({ length: 800 }).map(() => (
+      <div class="grid-container">
+        {Array.from({ length: 4 }).map(() => (
+          <div class="grid-item" />
+        ))}
+        <div class="crossv" />
+        <div class="crossh" />
+      </div>
+    ))
+  }
+</>
+
+<script is:inline>
+  const colores = ['#ff313b', '#3978b3', '#ffb224', '#000000']
+  const gridItems = document.querySelectorAll('.grid-item')
+
+  gridItems.forEach(function (item) {
+    item.addEventListener('mouseover', function () {
+      item.classList.remove('transition')
+      item.style.backgroundColor =
+        colores[Math.floor(Math.random() * colores.length)]
+    })
+    item.addEventListener('mouseleave', function () {
+      item.classList.add('transition')
+      item.style.backgroundColor = 'transparent'
+    })
+  })
+</script>
+
+<style>
+  .grid-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    border-top: 0;
+    width: 80px;
+    height: 80px;
+  }
+
+  .grid-item {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(237, 237, 237, 0.5);
+    padding: 18px;
+  }
+
+  .transition {
+    transition: background-color 1.5s ease;
+  }
+
+  .crossv,
+  .crossh {
+    position: absolute;
+    background-color: #58575750;
+    pointer-events: none;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .crossv {
+    width: 1px;
+    height: 25px;
+  }
+
+  .crossh {
+    width: 25px;
+    height: 1px;
+  }
+</style>
