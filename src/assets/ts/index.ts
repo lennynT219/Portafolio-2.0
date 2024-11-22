@@ -2,19 +2,26 @@ import { $ } from '../helpers/selector.ts'
 import { dragDisplay, resetDragState, updateTransform } from '../helpers/display.ts'
 import { getHora, getLocation, getSize } from '../helpers/timeLocation.ts'
 
-const mainContainer = $('.main-container')
+const mainContainer = $('.main-container')!
+const size = $('.size')!
+const hora = $('.hora')!
+const ubicacion = $('.ubicacion')!
 
-/**
- * @description Permite mantener la misma referencia para los eventos
- */
 const dragDisplayHandler = (e: MouseEvent) => dragDisplay(e, mainContainer!)
 
-window.addEventListener('resize', () => updateTransform(mainContainer!, window.innerWidth))
-updateTransform(mainContainer!, window.innerWidth)
+updateTransform(mainContainer, window.innerWidth)
 
-mainContainer?.addEventListener('dragstart', e => e.preventDefault())
+// Inicializaciones
+size.textContent = getSize()
 
-mainContainer?.addEventListener('mousedown', e => {
+window.addEventListener('resize', () => {
+  updateTransform(mainContainer, window.innerWidth)
+  size.textContent = getSize()
+})
+
+mainContainer.addEventListener('dragstart', e => e.preventDefault())
+
+mainContainer.addEventListener('mousedown', e => {
   if (e.button === 0) {
     resetDragState()
     mainContainer.style.cursor = 'grabbing'
@@ -22,7 +29,7 @@ mainContainer?.addEventListener('mousedown', e => {
   }
 })
 
-mainContainer?.addEventListener('mouseup', e => {
+mainContainer.addEventListener('mouseup', e => {
   if (e.button === 0) {
     mainContainer.style.cursor = 'grab'
     mainContainer.removeEventListener('mouseover', dragDisplayHandler)
@@ -30,14 +37,9 @@ mainContainer?.addEventListener('mouseup', e => {
   }
 })
 
-const hora = $('.hora')
-hora!.textContent = getHora()
+getHora(hora)
 
-const ubicacion = $('.ubicacion')
 const mostrarUbicacion = async () => {
-  ubicacion!.textContent = await getLocation()
+  ubicacion.textContent = await getLocation()
 }
 mostrarUbicacion()
-
-const size = $('.size')
-size!.textContent = getSize()

@@ -1,15 +1,13 @@
 /**
- * @description Función que retorna la fecha actual en formato 'yyyy-mm-dd'
- * @returns {string} Fecha actual
- * @example getFecha() // '2021-08-01'
+ * @description Función que actualiza la hora actual en formato 'HH:mm:ss' en un elemento HTML cada segundo
+ * @param {HTMLElement | null} elemento - El elemento HTML donde se mostrará la hora
  */
-const getHora = (): string => {
-  const fecha = new Date()
-  const horas = fecha.getHours().toString().padStart(2, '0')
-  const minutos = fecha.getMinutes().toString().padStart(2, '0')
-  const segundos = fecha.getSeconds().toString().padStart(2, '0')
-  return `${horas}:${minutos}:${segundos}`
-}
+const getHora = (elemento: HTMLElement | null): void => {
+  setInterval(() => {
+    const fecha = new Date();
+    elemento && (elemento.textContent = fecha.toTimeString().slice(0, 8));
+  }, 1000);
+};
 
 /**
  * @description Función que retorna la ubicación del usuario basado en su IP.
