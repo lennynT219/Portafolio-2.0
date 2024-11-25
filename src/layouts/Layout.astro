@@ -1,4 +1,6 @@
 ---
+// import { Menu } from '../components/Menu/Menu'
+import { ClientRouter } from 'astro:transitions'
 import Menu from '../components/Menu.astro'
 
 interface Props {
@@ -9,17 +11,18 @@ const { title } = Astro.props
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang='es'>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.ico' />
+    <meta name='generator' content={Astro.generator} />
+    <ClientRouter />
     <title>{title}</title>
   </head>
   <body>
-    <slot />
     <Menu />
+    <slot />
   </body>
 </html>
 
@@ -29,5 +32,18 @@ const { title } = Astro.props
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+  }
+
+  :root {
+    --white: #fff;
+    --black: #000;
+    --gray: #f5f5f5;
+    --dark-gray: #999797;
+    --light-gray: #eeeeee;
+  }
+
+  .app {
+    height: 100vh;
+    width: 100vw;
   }
 </style>
