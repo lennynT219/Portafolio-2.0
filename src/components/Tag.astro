@@ -1,0 +1,155 @@
+---
+import Icss from '../assets/icon/Icss.astro'
+import Iexpress from '../assets/icon/Iexpress.astro'
+import Ihtml from '../assets/icon/Ihtml.astro'
+import Iionic from '../assets/icon/Iionic.astro'
+import Ijava from '../assets/icon/Ijava.astro'
+import Ijs from '../assets/icon/Ijs.astro'
+import Imssql from '../assets/icon/Imssql.astro'
+import Inode from '../assets/icon/Inode.astro'
+import Iprisma from '../assets/icon/Iprisma.astro'
+import Ipython from '../assets/icon/Ipython.astro'
+import Ireact from '../assets/icon/Ireact.astro'
+import Ispringboot from '../assets/icon/Ispringboot.astro'
+import Its from '../assets/icon/Its.astro'
+
+interface Props {
+  name: string
+}
+
+interface Icons {
+  [key: string]: {
+    icon: (_prop: Record<string, any>) => any
+    background: string
+    label: string
+    color: string
+  }
+}
+
+const icons: Icons = {
+  js: {
+    icon: Ijs,
+    background: '#f0db4f',
+    label: 'JavaScript',
+    color: '#323330'
+  },
+  react: {
+    icon: Ireact,
+    background: '#242938',
+    label: 'React',
+    color: 'white'
+  },
+  java: {
+    icon: Ijava,
+    background: 'white',
+    label: 'Java',
+    color: 'black'
+  },
+  node: {
+    icon: Inode,
+    background: '#0d121c',
+    label: 'Node.js',
+    color: 'white'
+  },
+  css: {
+    icon: Icss,
+    background: '#663399',
+    label: 'CSS',
+    color: 'white'
+  },
+  html: {
+    icon: Ihtml,
+    background: '#e34f26',
+    label: 'HTML',
+    color: 'white'
+  },
+  ts: {
+    icon: Its,
+    background: '#3178C6',
+    label: 'TypeScript',
+    color: 'white'
+  },
+  ionic: {
+    icon: Iionic,
+    background: 'white',
+    label: 'Ionic',
+    color: 'black'
+  },
+  mssql: {
+    icon: Imssql,
+    background: 'white',
+    label: 'SQL Server',
+    color: 'black'
+  },
+  springBoot: {
+    icon: Ispringboot,
+    background: '#1b1f23',
+    label: 'Spring Boot',
+    color: 'white'
+  },
+  python: {
+    icon: Ipython,
+    background: 'white',
+    label: 'Python',
+    color: 'black'
+  },
+  prisma: {
+    icon: Iprisma,
+    background: '#090a15',
+    label: 'Prisma',
+    color: 'white'
+  },
+  express: {
+    icon: Iexpress,
+    background: 'white',
+    label: 'Express.js',
+    color: 'black'
+  }
+}
+const { name } = Astro.props
+const Icon = icons[name as keyof typeof icons]
+
+if (!Icon) throw new Error(`Icono con el nombre "${name}" no encontrado`)
+---
+
+<li class='tag' style=`--background:${Icon.background}`>
+  <Icon.icon />
+  <span style=`color:${Icon.color};`>{Icon.label}</span>
+</li>
+
+<style is:global>
+  .tag {
+    display: flex;
+    background-color: var(--background);
+    padding: 5px;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 1px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .tag svg {
+    height: 16px;
+    width: 16px;
+    color: white;
+  }
+
+  .tag span {
+    display: inline-block;
+    white-space: nowrap;
+    opacity: 1;
+    max-width: 0;
+    overflow: hidden;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'JetBrains Mono', monospace;
+    transition: max-width 0.5s ease;
+  }
+
+  .tag:hover {
+    gap: 2px;
+    span {
+      max-width: 300px;
+    }
+  }
+</style>

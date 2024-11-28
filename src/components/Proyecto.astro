@@ -1,0 +1,100 @@
+---
+import Tag from './Tag.astro'
+import Igithub from '../assets/icon/Igithub.astro'
+import { Image } from 'astro:assets'
+
+interface Props {
+  name: string
+  description: string
+  tags: string[]
+  github: string
+  url: string | boolean
+  img: string
+  key: number
+  colors: string[]
+}
+
+const { name, description, tags, github, url, img, key, colors } = Astro.props
+
+const listColor = `--shadow: 90deg, ${colors.join(', ')}`
+---
+
+<div class='gradient-shadow' style=`grid-area: pro_${key+1}; ${listColor};`>
+  <h3>{name}</h3>
+  <p>{description}</p>
+  <ul>
+    {tags.map(tag => <Tag name={tag} />)}
+  </ul>
+  <Image src={img} alt={name} height={30} width={30} />
+  <a href={github} target='_blank'>
+    <Igithub width='20px' height='20px' />
+    <span>Ver codigo fuente</span>
+  </a>
+</div>
+
+<style>
+  div {
+    position: relative;
+    display: flex;
+    gap: 15px;
+    border-radius: 10px;
+    background-color: var(--white);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  div h3 {
+    font-size: 22px;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  div p {
+    font-size: 14px;
+  }
+
+  div img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  div ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+
+  div a {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: #ededed;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  div a span {
+    font-size: 13px;
+  }
+
+  div a:hover {
+    background-color: var(--medium-gray);
+  }
+
+  div a:hover svg {
+    -webkit-animation: jello-horizontal 0.9s both;
+    animation: jello-horizontal 0.9s both;
+  }
+</style>

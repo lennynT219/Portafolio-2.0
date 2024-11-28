@@ -1,0 +1,248 @@
+{
+  "basics": {
+    "name": "Lenin Masapanta",
+    "pseudo": "Lennyn",
+    "label": "Desarrollador de Software",
+    "image": "perfil.jpg",
+    "email": "lennynvega35@gmail.com",
+    "phone": "0991462174",
+    "url": "https://johndoe.com",
+    "url_cv": "https://1drv.ms/b/s!AibN7p-u3PlekXvnEcaDE04LNvp1?e=iqa5JA",
+    "summary": "A summary of John Doe…",
+    "location": {
+      "address": "Iberia y Hernando Davila",
+      "city": "Quito",
+      "country": "Ecuador"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "lennynT219",
+        "url": "https://github.com/lennynT219"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "lenin-masapanta",
+        "url": "https://www.linkedin.com/in/lenin-masapanta"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Cooperativa de Ahorro y Crédito Politécnica Ltda.",
+      "position": "Pasante",
+      "url": "https://coopepn.fin.ec/",
+      "startDate": "2024-04-29",
+      "endDate": "2024-07-01",
+      "summary": "Desarrollo de una aplicación web para la gestión de nomina y talento humano.",
+      "highlights": ["Started the company"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Escuela Politécnica Nacional",
+      "url": "https://www.epn.edu.ec/",
+      "area": "Desarrollo de Software",
+      "studyType": "Tecnología Superior",
+      "startDate": "2022-04-01",
+      "endDate": "Actualidad",
+      "score": "7.38",
+      "courses": ["DB1101 - Basic SQL"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "Company",
+      "url": "https://certificate.com"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "url": "https://publication.com",
+      "summary": "Description…"
+    }
+  ],
+  "skills": [
+    {
+      "name": "HTML",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend"]
+    },
+    {
+      "name": "CSS",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"]
+    },
+    {
+      "name": "TypeScript",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Frontend", "Backend", "JavaScript Superset"]
+    },
+    {
+      "name": "Ionic",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Frontend", "Framework", "Mobile"]
+    },
+    {
+      "name": "SQLServer",
+      "level": "Intermedio",
+      "keywords": ["Bases de Datos", "SQL", "Almacenamiento de Datos", "Backend"]
+    },
+    {
+      "name": "Git",
+      "level": "Avanzado",
+      "keywords": ["Control de Versiones", "Colaboración", "Código Fuente"]
+    },
+    {
+      "name": "GitHub",
+      "level": "Avanzado",
+      "keywords": ["Control de Versiones", "Colaboración", "Código Fuente", "Git"]
+    },
+    {
+      "name": "Node",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Backend", "JavaScript", "Servidor"]
+    },
+    {
+      "name": "React",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    },
+    {
+      "name": "Java",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Backend", "Programación", "POO"]
+    },
+    {
+      "name": "Spring Boot",
+      "level": "Básico",
+      "keywords": ["Desarrollo Web", "Backend", "Java", "Framework"]
+    },
+    {
+      "name": "Python",
+      "level": "Básico - Intermedio",
+      "keywords": ["Análisis de Datos", "Programación"]
+    },
+    {
+      "name": "C++",
+      "level": "Básico - Intermedio",
+      "keywords": ["Programación"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Español",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "Inglés",
+      "fluency": "Intermediate"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Wildlife",
+      "keywords": ["Ferrets", "Unicorns"]
+    }
+  ],
+  "references": [
+    {
+      "name": "Jane Doe",
+      "reference": "Reference…"
+    }
+  ],
+  "projects": [
+    {
+      "name": "NominaPro",
+      "startDate": "2024-04-29",
+      "endDate": "2024-07-01",
+      "description": "Aplicación web avanzada para la gestión de nomina y talento humano, cuenta con tablas interactivas y generación de reportes en formato excel.",
+      "highlights": ["Started the company"],
+      "github": "https://github.com/lennynT219/NominaPro.git",
+      "url": "https://project.com/",
+      "img": "/nominapro.webp",
+      "technologies": ["react", "css", "js", "node", "express", "mssql", "prisma"],
+      "colors": [
+        "var(--blue)",
+        "var(--golden)",
+        "var(--medium-gray)",
+        "var(--skyblue)",
+        "var(--yellow)"
+      ]
+    },
+    {
+      "name": "Pet Zoo",
+      "startDate": "2023-09-15",
+      "endDate": "2023-11-20",
+      "description": "Aplicación web para la gestión de turnos de una peluqueria canina, facilitando la organización y reserva de citas de manera eficiente y amigable tanto para los clientes como para el personal del negocio.",
+      "highlights": ["Started the company"],
+      "github": "https://github.com/lennynT02/Pet_Zoo_react.git",
+      "url": "https://project.com/",
+      "img": "/petzoo.webp",
+      "technologies": ["react", "css", "node", "mssql"],
+      "colors": [
+        "var(--green-blue)",
+        "var(--sky-blue)",
+        "var(--light-brown)",
+        "var(--dark-blue)",
+        "var(--sky-blue)",
+        "var(--black)",
+        "var(--green-blue)"
+      ]
+    },
+    {
+      "name": "CineClub",
+      "startDate": "2023-03-16",
+      "endDate": "2023-05-20",
+      "description": "Software de gestión para una sala de cine, desarrollado en Java, que permite a los usuarios realizar reservas de asientos, visualizar la cartelera y realizar pagos de manera segura.",
+      "highlights": ["Started the company"],
+      "github": "https://github.com/lennynT02/CineClub.git",
+      "url": false,
+      "img": "/cineclub.webp",
+      "technologies": ["java", "mssql"],
+      "colors": [
+        "var(--grass-green)",
+        "var(--dark-red)",
+        "var(--dark-purple)",
+        "var(--dark-brown)",
+        "var(--grass-green)"
+      ]
+    },
+    {
+      "name": "SQLSConect",
+      "startDate": "2023-07-02",
+      "endDate": "2023-08-20",
+      "description": "Librería para Java diseñada para establecer conexiones con SQL Server, mediante una interfaz gráfica que facilita la configuración de la conexión.",
+      "highlights": ["Started the company"],
+      "github": "https://github.com/lennynT02/conexionMSSQL-Java",
+      "url": false,
+      "img": "/sqlsconect.webp",
+      "technologies": ["java", "mssql"],
+      "colors": [
+        "var(--brown)",
+        "var(--purple)",
+        "var(--medium-gray)",
+        "var(--dark-gray)",
+        "var(--brown)"
+      ]
+    }
+  ]
+}

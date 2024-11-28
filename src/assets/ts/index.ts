@@ -1,9 +1,5 @@
 import { $ } from '../helpers/selector.ts'
-import {
-  dragDisplay,
-  resetDragState,
-  updateTransform
-} from '../helpers/display.ts'
+import { dragDisplay, resetDragState, updateTransform } from '../helpers/display.ts'
 import { getHora, getLocation, getSize } from '../helpers/timeLocation.ts'
 
 const mainContainer = $('.main-container')!
