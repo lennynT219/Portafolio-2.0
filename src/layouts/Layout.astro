@@ -28,10 +28,51 @@ const { title } = Astro.props
 
 <style is:global>
   @import url(../assets/css/keyframes.css);
-  body {
-    box-sizing: border-box;
+  * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Montserrat Variable', sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .gradient-shadow:hover h3 {
+    background: linear-gradient(var(--shadow));
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: bg-pan-right 8s infinite;
+  }
+
+  .gradient-shadow::before {
+    content: '';
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(var(--shadow));
+    background-size: 200% auto;
+    border-radius: 10px;
+    animation: bg-pan-right 8s infinite;
+    transform: scale(1.01);
+    filter: blur(15px);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+  }
+
+  .gradient-shadow:hover::before {
+    opacity: 1;
   }
 
   :root {
@@ -40,10 +81,25 @@ const { title } = Astro.props
     --gray: #f5f5f5;
     --dark-gray: #999797;
     --light-gray: #eeeeee;
-  }
-
-  .app {
-    height: 100vh;
-    width: 100vw;
+    --medium-gray: #d4d4d4;
+    --green: #87ff87;
+    --dark-green: #13991f;
+    --light-green: #59d75e;
+    --grass-green: #90dd39;
+    --green-blue: #59b8bb;
+    --red: #ff313b;
+    --dark-red: #9e1f1f;
+    --blue: #3978b3;
+    --sky-blue: #0d6efd;
+    --dark-blue: #011b61;
+    --yellow: #ffb224;
+    --golden: #cc9a04;
+    --dark-yellow: #ff8c00;
+    --light-brown: #c0a18b;
+    --brown: #c28036;
+    --dark-brown: #732626;
+    --purple: #9452ff;
+    --dark-purple: #573586;
+    --skyblue: #40a1d4;
   }
 </style>
