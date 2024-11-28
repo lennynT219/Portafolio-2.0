@@ -1,0 +1,44 @@
+---
+import { Icon } from '@iconify/react'
+---
+
+<aside>
+  <a class='redirigir' href='/' data-astro-reload>
+    <Icon icon='mingcute:back-line' client:load />
+    <span>Atras</span>
+  </a>
+  <a href='#presentacion'> Presentación </a>
+  <a href='#proyectos'> Proyectos </a>
+  <a href='#habilidades'> Habilidades </a>
+  <a href='#sobre-mi'> Sobre mi </a>
+</aside>
+
+<style>
+  aside {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 107px;
+    left: 350px;
+    transition: opacity 1s ease;
+    font-size: 14px;
+    gap: 10px;
+    a {
+      color: var(--dark-gray);
+    }
+  }
+
+  aside a:first-child {
+    margin-bottom: 80px;
+  }
+
+  aside a:hover {
+    color: black;
+  }
+
+  @media (max-width: 1600px) {
+    aside {
+      display: none;
+    }
+  }
+</style>
