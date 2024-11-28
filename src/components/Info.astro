@@ -1,0 +1,201 @@
+---
+import { Icon } from '@iconify/react'
+import { basics } from '../assets/json/cv.json'
+import { IconGradient } from './IconGradient/IconGradient'
+import { Image } from 'astro:assets'
+---
+
+<div>
+  <h1 id='presentacion'>Hola, soy {basics.pseudo} <span>Disponible</span></h1>
+
+  <h2>{basics.label}</h2>
+
+  <article>
+    <span> Con un firme compromiso de llevar mi experiencia al siguiente nivel profesional, </span>
+    <span>
+      me motiva el aprendizaje constante y la perfección de mis habilidades técnicas y creativas.
+    </span>
+    <span>
+      Soy de {basics.location.city}, {basics.location.country},
+    </span>
+    <span>
+      y me especializo en el desarrollo aplicaciones funcionales, atractivas y eficientes,
+    </span>
+    <span>aportando soluciones innovadoras para el éxito de cada proyecto.</span>
+  </article>
+
+  <Image src='/perfil.jpg' alt='Imgen de perfil' width={30} height={30} />
+
+  <figure>
+    <IconGradient
+      icon='cv'
+      href={basics.url_cv}
+      label='Curriculum'
+      copy={basics.url_cv}
+      msg='Enlace'
+      client:load
+    />
+    <IconGradient
+      icon='email'
+      href=`mailto:${basics.email}`
+      label={basics.email}
+      copy={basics.email}
+      msg='Correo electronico'
+      client:load
+    />
+    <IconGradient
+      icon='phone'
+      href=`https://wa.me/${basics.phone}`
+      label={basics.phone}
+      copy={basics.phone}
+      msg='Numero de telefono'
+      client:load
+    />
+  </figure>
+
+  <a href='/' data-astro-reload>
+    <Icon icon='mingcute:back-line' client:load />
+    <span>Atras</span>
+  </a>
+</div>
+
+<style>
+  div {
+    display: grid;
+    grid-template-columns: 500px auto;
+    grid-template-rows: auto 50px auto auto;
+    grid-template-areas:
+      'titulo titulo'
+      'dev foto'
+      'resumen foto'
+      'contacto foto';
+  }
+
+  div > a {
+    grid-area: atras;
+    color: var(--dark-gray);
+    font-size: 14px;
+    display: none;
+  }
+
+  div h1 {
+    display: flex;
+    grid-area: titulo;
+    display: inline-flex;
+    font-size: 55px;
+    margin-top: 0px;
+    font-weight: 400;
+    margin: 0px;
+    gap: 10px;
+    align-items: end;
+
+    span {
+      display: inline-flex;
+      background-color: var(--green);
+      color: var(--dark-green);
+      height: fit-content;
+      padding: 3px;
+      border-radius: 10px;
+      border: 1px solid var(--light-green);
+      font-size: 10px;
+      box-shadow: 0 0 10px var(--light-green);
+    }
+  }
+
+  div h2 {
+    grid-area: dev;
+    display: inline-flex;
+    background: linear-gradient(
+      90deg,
+      var(--yellow),
+      var(--red),
+      var(--black),
+      var(--blue),
+      var(--yellow)
+    );
+    background-size: 400% auto;
+    color: transparent;
+    background-clip: text;
+    animation: bg-pan-right 8s infinite;
+    font-size: 30px;
+    margin: 0px;
+    font-weight: bold;
+    align-self: center;
+  }
+
+  div img {
+    grid-area: foto;
+    display: flex;
+    position: relative;
+    transition: all 0.3s ease;
+    width: 161px;
+    height: auto;
+    margin-left: auto;
+    box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 0.5);
+    border-radius: 20px;
+    object-fit: cover;
+  }
+
+  div article {
+    grid-area: resumen;
+    align-self: center;
+    span {
+      font-weight: 600;
+    }
+    span:nth-child(2) {
+      color: var(--red);
+    }
+    span:nth-child(3) {
+      color: var(--dark-yellow);
+    }
+    span:nth-child(4) {
+      color: var(--blue);
+    }
+  }
+
+  div figure {
+    grid-area: contacto;
+    display: flex;
+    margin: 0;
+    align-items: end;
+    justify-self: start;
+  }
+
+  @media (max-width: 1600px) {
+    div {
+      grid-template-columns: 500px auto;
+      grid-template-rows: 50px auto 50px auto auto;
+      grid-template-areas:
+        'atras atras'
+        'titulo titulo'
+        'dev foto'
+        'resumen foto'
+        'contacto foto';
+    }
+
+    div > a {
+      display: block;
+    }
+  }
+  @media (max-width: 660px) {
+    div {
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto auto auto auto;
+      grid-template-areas:
+        'atras atras'
+        'titulo titulo'
+        'dev foto'
+        'resumen foto'
+        'contacto foto';
+    }
+
+    div > *:not(img) {
+      padding: 10px 0;
+    }
+
+    div img {
+      align-self: center;
+      margin-left: 15px;
+    }
+  }
+</style>
