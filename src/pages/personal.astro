@@ -3,7 +3,10 @@ import Layout from '../layouts/Layout.astro'
 import Aside from '../components/Aside.astro'
 import Info from '../components/Info.astro'
 import Proyecto from '../components/Proyecto.astro'
-import { projects } from '../assets/json/cv.json'
+import { projects, skills } from '../assets/json/cv.json'
+import Icode from '../assets/icon/Icode.astro'
+import Itools from '../assets/icon/Itools.astro'
+import Habilidades from '../components/Habilidades.astro'
 ---
 
 <Layout title='Lenin Masapanta - Informacion Personal 👨🏽‍💻'>
@@ -11,58 +14,69 @@ import { projects } from '../assets/json/cv.json'
     <header>
       <Aside />
       <Info />
-      <hr />
-      <main>
-        <section>
-          <h2>Proyectos</h2>
-          {
-            projects
-              .slice(0, 4)
-              .map((project, i) => (
-                <Proyecto
-                  name={project.name}
-                  description={project.description}
-                  github={project.github}
-                  url={project.url}
-                  img={project.img}
-                  key={i}
-                  colors={project.colors}
-                  tags={project.technologies}
-                />
-              ))
-          }
-        </section>
-      </main>
     </header>
+    <main>
+      <!-- <section class='experiencias'></section> -->
+      <section class='proyectos'>
+        <h2><Icode />Proyectos</h2>
+        {
+          projects
+            .slice(0, 4)
+            .map((project, i) => (
+              <Proyecto
+                name={project.name}
+                description={project.description}
+                github={project.github}
+                url={project.url}
+                img={project.img}
+                key={i}
+                colors={project.colors}
+                tags={project.technologies}
+              />
+            ))
+        }
+      </section>
+      <section class='habilidades'>
+        <h2><Itools />Habilidades</h2>
+        <Habilidades list={skills} />
+      </section>
+      <section class='sobre-mi'>
+        <h2>Sobre mí</h2>
+        <span>Mi nombre es Lenin Masapanta, soy estudiante de Desarrollo de Software en la</span>
+        <span>Escuela Politécnica Nacional(EPN).</span>
+        <span>Me apasiona el arte y la tecnología,</span>
+        <span>
+          donde encuentro mis mayores intereses: el dibujo como expresión artística, la tecnología
+          como una forma de arte del futuro y la cocina como el arte de combinar sabores para crear
+          obras extraordinarias. Me considero una persona confiable y optimista, creyendo que la
+          vida es demasiado corta para preocuparse por cosas simples. Aspiro a inventar algo nuevo
+          utilizando todos mis conocimientos como un logro personal
+        </span>
+      </section>
+    </main>
+    <footer></footer>
   </div>
 </Layout>
 
-<style>
-  .personal-container header {
+<style is:global>
+  .personal-container {
     display: flex;
     flex-direction: column;
     max-width: 720px;
     margin: 0px auto;
+    gap: 50px;
   }
 
-  .personal-container header {
-    padding: 100px 0px 30px 0px;
+  .personal-container {
+    padding: 100px 0px;
   }
 
-  .personal-container section:nth-child(2) {
-    overflow: hidden;
-    padding: 20px 0px 20px 0px;
+  .personal-container main {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
   }
-
-  hr {
-    border: none;
-    height: 2px;
-    background: linear-gradient(90deg, #b9b5b536, #615f5f52, #615f5f52, #b9b5b536);
-    width: 100%;
-    margin: 20px 0;
-  }
-
-  main section:first-child {
+  .proyectos {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
@@ -74,128 +88,46 @@ import { projects } from '../assets/json/cv.json'
       'pro_3 pro_3 pro_3 pro_4 pro_4';
     h2 {
       grid-area: proyecto;
-      color: var(--black);
-      text-align: center;
-      font-size: 35px;
-      font-weight: 800;
-      background: var(--white);
+      justify-content: center;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
       border-radius: 10px;
       margin: 0;
       padding: 25px 15px;
     }
   }
-
-  .tituloH {
+  .personal-container section h2 {
     display: flex;
-    gap: 5px;
+    font-size: 26px;
+    font-weight: 600;
     align-items: center;
-    justify-content: center;
+    gap: 10px;
+  }
+  .personal-container section h2 svg {
+    height: 25px;
+    width: 25px;
   }
 
-  .tituloH h1 {
-    font-size: 35px;
-    font-weight: 800;
-  }
-
-  .linea-titulo {
-    width: 100%;
-    height: 5px;
-    border-radius: 999px;
-    background: linear-gradient(var(--lienaGradiente));
-  }
-
-  .tegnologias {
-    width: 80vw;
-    height: 100px;
-    margin: auto;
+  .habilidades {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
     overflow: hidden;
   }
 
-  .tec-container {
-    position: relative;
-    background-color: #0061b100;
-    display: flex;
-    width: calc(100px * 16);
-    z-index: 0;
+  .sobre-mi {
+    font-size: 16px;
+    font-weight: bold;
   }
 
-  .tec-container::before {
-    position: absolute;
-    content: '';
-    background-image: linear-gradient(
-      to right,
-      #ffffff,
-      #ffffffde,
-      #ffffffcb,
-      #ffffff86,
-      #ffffff00
-    );
-    width: 6%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
-
-  .tec-container::after {
-    position: absolute;
-    content: '';
-    background-image: linear-gradient(to left, #ffffff, #ffffffde, #ffffffcb, #ffffff86, #ffffff00);
-    width: 6%;
-    height: 100%;
-    top: 0;
-    right: 879px;
-  }
-
-  .tec-item {
-    animation: scroll 25s linear infinite;
-    -webkit-animation: scroll 25s linear infinite;
-    width: 100px;
-  }
-
-  .sobre-mi-contenido {
-    font-weight: 570;
-  }
-
-  .sobre-mi-contenido span {
-    color: var(--colorS);
-  }
-
-  .sobre-mi-contenido p {
-    text-align: justify;
-  }
-
-  .copyNotify {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: auto;
-    height: auto;
-    background-color: #ecfdf3;
-    color: #008a2e;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border: solid 1px #d3fde5;
-    display: flex;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    gap: 8px;
-  }
-
-  .copyNotify p {
-    margin: 0;
-    font-size: 13px;
-    font-weight: 600;
-    color: #008a2e;
+  .sobre-mi h2 {
+    margin-bottom: 40px;
   }
 
   @media (max-width: 750px) {
     .personal-container {
-      padding: 0 15px;
+      padding: 100px 15px;
     }
-    main section:first-child {
+    main .proyectos {
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
         'proyecto pro_1'
@@ -207,7 +139,7 @@ import { projects } from '../assets/json/cv.json'
   }
 
   @media (max-width: 450px) {
-    main section:first-child {
+    main .proyectos {
       grid-template-columns: repeat(1, 1fr);
       grid-template-areas:
         'proyecto'

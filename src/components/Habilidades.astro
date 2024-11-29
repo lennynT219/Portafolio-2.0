@@ -1,0 +1,101 @@
+---
+import Iastro from '../assets/icon/Iastro.astro'
+import Icss from '../assets/icon/Icss.astro'
+import Iexpress from '../assets/icon/Iexpress.astro'
+import Ihtml from '../assets/icon/Ihtml.astro'
+import Iionic from '../assets/icon/Iionic.astro'
+import Ijava from '../assets/icon/Ijava.astro'
+import Ijs from '../assets/icon/Ijs.astro'
+import Imssql from '../assets/icon/Imssql.astro'
+import Inode from '../assets/icon/Inode.astro'
+import Iprisma from '../assets/icon/Iprisma.astro'
+import Ipython from '../assets/icon/Ipython.astro'
+import Ireact from '../assets/icon/Ireact.astro'
+import Ispringboot from '../assets/icon/Ispringboot.astro'
+import Its from '../assets/icon/Its.astro'
+
+type Icon = (props: Record<string, any>) => any
+
+interface Props {
+  list: Array<{ name: keyof typeof icons }>
+}
+
+const { list }: Props = Astro.props
+
+const icons: Record<string, Icon> = {
+  astro: Iastro,
+  react: Ireact,
+  js: Ijs,
+  java: Ijava,
+  html: Ihtml,
+  node: Inode,
+  css: Icss,
+  ts: Its,
+  ionic: Iionic,
+  mssql: Imssql,
+  springBoot: Ispringboot,
+  python: Ipython,
+  prisma: Iprisma,
+  express: Iexpress
+}
+
+const render = list.map(item => icons[item.name]).filter(Boolean)
+---
+
+<div class='list' style='--height:80px;--width: 110px;--quatity:11'>
+  <ul>
+    {
+    render.map(( Icon,i  )=> (
+      <li style=`--position: ${i}`>
+          <Icon />
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style is:global>
+  .list {
+    width: 100%;
+    height: var(--height);
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 25% 75%,
+      transparent
+      );
+  }
+
+  .list ul {
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--quatity) * var(--width));
+    position: relative;
+    gap: 50px;
+
+  }
+
+  .list li {
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    animation-delay: calc(10s/var(--quatity) * var(--position)*-1);
+    transition:  filter 0.5s;
+  }
+
+  .list:hover li {
+    animation-play-state: paused;
+    filter: grayscale(1);
+  }
+
+  .list li:hover {
+    filter: grayscale(0);
+  }
+  .list li svg {
+    width: var(--width);
+    height: var(--height);
+  }
+</style>

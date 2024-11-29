@@ -77,72 +77,77 @@
   ],
   "skills": [
     {
-      "name": "HTML",
-      "level": "Avanzado",
-      "keywords": ["Desarrollo Web", "Frontend"]
-    },
-    {
-      "name": "CSS",
-      "level": "Intermedio",
-      "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"]
-    },
-    {
-      "name": "JavaScript",
+      "name": "astro",
       "level": "Intermedio",
       "keywords": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"]
     },
     {
-      "name": "TypeScript",
-      "level": "Intermedio",
-      "keywords": ["Desarrollo Web", "Frontend", "Backend", "JavaScript Superset"]
-    },
-    {
-      "name": "Ionic",
-      "level": "Intermedio",
-      "keywords": ["Desarrollo Web", "Frontend", "Framework", "Mobile"]
-    },
-    {
-      "name": "SQLServer",
-      "level": "Intermedio",
-      "keywords": ["Bases de Datos", "SQL", "Almacenamiento de Datos", "Backend"]
-    },
-    {
-      "name": "Git",
-      "level": "Avanzado",
-      "keywords": ["Control de Versiones", "Colaboración", "Código Fuente"]
-    },
-    {
-      "name": "GitHub",
-      "level": "Avanzado",
-      "keywords": ["Control de Versiones", "Colaboración", "Código Fuente", "Git"]
-    },
-    {
-      "name": "Node",
-      "level": "Avanzado",
-      "keywords": ["Desarrollo Web", "Backend", "JavaScript", "Servidor"]
-    },
-    {
-      "name": "React",
+      "name": "react",
       "level": "Intermedio",
       "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
     },
     {
-      "name": "Java",
+      "name": "html",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend"]
+    },
+    {
+      "name": "css",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"]
+    },
+    {
+      "name": "js",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"]
+    },
+    {
+      "name": "ts",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Frontend", "Backend", "JavaScript Superset"]
+    },
+    {
+      "name": "java",
       "level": "Intermedio",
       "keywords": ["Desarrollo Web", "Backend", "Programación", "POO"]
     },
     {
-      "name": "Spring Boot",
+      "name": "ionic",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Frontend", "Framework", "Mobile"]
+    },
+    {
+      "name": "mssql",
+      "level": "Intermedio",
+      "keywords": ["Bases de Datos", "SQL", "Almacenamiento de Datos", "Backend"]
+    },
+    {
+      "name": "git",
+      "level": "Avanzado",
+      "keywords": ["Control de Versiones", "Colaboración", "Código Fuente"]
+    },
+    {
+      "name": "github",
+      "level": "Avanzado",
+      "keywords": ["Control de Versiones", "Colaboración", "Código Fuente", "Git"]
+    },
+    {
+      "name": "node",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Backend", "JavaScript", "Servidor"]
+    },
+    {
+      "name": "springboot",
       "level": "Básico",
       "keywords": ["Desarrollo Web", "Backend", "Java", "Framework"]
     },
     {
-      "name": "Python",
+      "name": "python",
       "level": "Básico - Intermedio",
       "keywords": ["Análisis de Datos", "Programación"]
     },
     {
-      "name": "C++",
+      "name": "cpp",
       "level": "Básico - Intermedio",
       "keywords": ["Programación"]
     }
