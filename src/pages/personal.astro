@@ -32,6 +32,7 @@ import Habilidades from '../components/Habilidades.astro'
                 key={i}
                 colors={project.colors}
                 tags={project.technologies}
+                loading={i < 2 ? 'eager' : 'lazy'}
               />
             ))
         }
@@ -42,16 +43,19 @@ import Habilidades from '../components/Habilidades.astro'
       </section>
       <section class='sobre-mi'>
         <h2>Sobre mí</h2>
-        <span>Mi nombre es Lenin Masapanta, soy estudiante de Desarrollo de Software en la</span>
-        <span>Escuela Politécnica Nacional(EPN).</span>
-        <span>Me apasiona el arte y la tecnología,</span>
-        <span>
-          donde encuentro mis mayores intereses: el dibujo como expresión artística, la tecnología
-          como una forma de arte del futuro y la cocina como el arte de combinar sabores para crear
-          obras extraordinarias. Me considero una persona confiable y optimista, creyendo que la
-          vida es demasiado corta para preocuparse por cosas simples. Aspiro a inventar algo nuevo
-          utilizando todos mis conocimientos como un logro personal
-        </span>
+        <p>
+          Hola, soy Lenin Masapanta, estudiante de Desarrollo de Software en la Escuela Politécnica
+          Nacional (EPN). Mi pasión por el arte y la tecnología me impulsa a explorar diversas
+          formas de creatividad: desde el dibujo 🎨 como medio de expresión, hasta la tecnología ⚙️
+          como el arte del futuro. Además, encuentro en la cocina 👨🏽‍🍳 una oportunidad de combinar
+          sabores para crear experiencias únicas.
+        </p>
+        <p>
+          Me considero una persona optimista y confiable, convencido de que la vida es demasiado
+          corta para preocuparse por cosas triviales. Mi sueño es aprovechar mis conocimientos para
+          inventar algo nuevo, fusionando mis pasiones en un proyecto que deje una huella
+          significativa.
+        </p>
       </section>
     </main>
     <footer></footer>

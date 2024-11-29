@@ -5,8 +5,7 @@
 const getHora = (elemento: HTMLElement | null): void => {
   setInterval(() => {
     const fecha = new Date()
-    elemento != null &&
-      (elemento.textContent = fecha.toTimeString().slice(0, 8))
+    elemento != null && (elemento.textContent = fecha.toTimeString().slice(0, 8))
   }, 1000)
 }
 
@@ -15,20 +14,20 @@ const getHora = (elemento: HTMLElement | null): void => {
  * @returns {Promise<string>} Ubicación del usuario
  * @example getLocation() // 'Bogotá, Colombia'
  */
-// const getLocation = async (): Promise<string> => {
-//   try {
-//     const res = await fetch('https://ipapi.co/json/')
-//     const data = await res.json()
-//     return `${data.city}, ${data.country_name}`
-//   } catch (err) {
-//     console.error(err)
-//     return 'No se pudo obtener la ubicación'
-//   }
-// }
-
-const getLocation = (): string => {
-  return 'Bogotá, Colombia'
+const getLocation = async (): Promise<string> => {
+  try {
+    const res = await fetch('https://ipapi.co/json/')
+    const data = await res.json()
+    return `${data.city}, ${data.country_name}`
+  } catch (err) {
+    console.error(err)
+    return 'No se pudo obtener la ubicación'
+  }
 }
+
+// const getLocation = (): string => {
+//   return 'Bogotá, Colombia'
+// }
 
 const getSize = (): string => {
   return `${window.innerWidth} x ${window.innerHeight}`

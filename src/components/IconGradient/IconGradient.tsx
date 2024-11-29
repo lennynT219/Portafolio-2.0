@@ -37,7 +37,7 @@ export const IconGradient = ({ icon, href, label, copy, msg }: Props) => {
 
   return (
     <>
-      <Toaster richColors position='top-right' />
+      {/* <Toaster richColors position='top-right' /> */}
       <a href={href} onClick={handleClick}>
         {icons[icon]}
         <span>{label}</span>
