@@ -40,6 +40,6 @@ mainContainer.addEventListener('mouseup', e => {
 getHora(hora)
 
 const mostrarUbicacion = async () => {
-  ubicacion.textContent = getLocation()
+  ubicacion.textContent = await getLocation()
 }
 mostrarUbicacion()
