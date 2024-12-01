@@ -6,7 +6,7 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "paths": {
-      "cv": ["src/assets/json/cv.json"]
+      "cv": ["./src/assets/json/cv.json"]
     }
   }
 }

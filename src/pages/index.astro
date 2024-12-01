@@ -5,25 +5,25 @@ import Letters from '../components/Letters.astro'
 import { letters } from '../assets/icon/letters'
 ---
 
-<Layout title="Lenin Masapanta - Software Developer 👨🏽‍💻">
-  <div class="main-container">
+<Layout title='Software Developer 👨🏽‍💻'>
+  <div class='main-container'>
     {letters.map(props => <Letters {...props} />)}
     <HomeGrid />
   </div>
-  <div class="hora"></div>
-  <div class="size"></div>
-  <div class="ubicacion"></div>
+  <div class='hora'></div>
+  <div class='size'></div>
+  <div class='ubicacion'></div>
 </Layout>
 
-<script src="../assets/ts/index.ts"></script>
+<script src='../assets/ts/index.ts'></script>
 <style is:global>
   .main-container {
     display: grid;
     cursor: grab;
     grid-template-columns: repeat(26, 1fr);
     grid-template-rows: repeat(26, 1fr);
-    transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y)))
-      skewX(-48deg) skewY(14deg) scaleX(2.9) scaleY(1.3);
+    transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) skewX(-48deg) skewY(14deg)
+      scaleX(2.9) scaleY(1.3);
     --rotate: 0deg;
     --x: 0px;
     --y: 0px;

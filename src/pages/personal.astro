@@ -9,15 +9,15 @@ import Itools from '../assets/icon/Itools.astro'
 import Habilidades from '../components/Habilidades.astro'
 ---
 
-<Layout title='Lenin Masapanta - Informacion Personal 👨🏽‍💻'>
+<Layout title='Informacion Personal 👨🏽‍💻'>
   <div class='personal-container'>
+    <Aside />
     <header>
-      <Aside />
       <Info />
     </header>
     <main>
       <!-- <section class='experiencias'></section> -->
-      <section class='proyectos'>
+      <section id='proyectos'>
         <h2><Icode />Proyectos</h2>
         {
           projects
@@ -37,11 +37,11 @@ import Habilidades from '../components/Habilidades.astro'
             ))
         }
       </section>
-      <section class='habilidades'>
+      <section id='habilidades'>
         <h2><Itools />Habilidades</h2>
         <Habilidades list={skills} />
       </section>
-      <section class='sobre-mi'>
+      <section id='sobre-mi'>
         <h2>Sobre mí</h2>
         <p>
           Hola, soy Lenin Masapanta, estudiante de Desarrollo de Software en la Escuela Politécnica
@@ -69,9 +69,7 @@ import Habilidades from '../components/Habilidades.astro'
     max-width: 720px;
     margin: 0px auto;
     gap: 50px;
-  }
-
-  .personal-container {
+    scroll-behavior: smooth;
     padding: 100px 0px;
   }
 
@@ -80,7 +78,7 @@ import Habilidades from '../components/Habilidades.astro'
     flex-direction: column;
     gap: 50px;
   }
-  .proyectos {
+  #proyectos {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
@@ -111,19 +109,19 @@ import Habilidades from '../components/Habilidades.astro'
     width: 25px;
   }
 
-  .habilidades {
+  #habilidades {
     display: flex;
     flex-direction: column;
     gap: 40px;
     overflow: hidden;
   }
 
-  .sobre-mi {
+  #sobre-mi {
     font-size: 16px;
     font-weight: bold;
   }
 
-  .sobre-mi h2 {
+  #sobre-mi h2 {
     margin-bottom: 40px;
   }
 
@@ -131,7 +129,7 @@ import Habilidades from '../components/Habilidades.astro'
     .personal-container {
       padding: 100px 15px;
     }
-    main .proyectos {
+    main #proyectos {
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
         'proyecto pro_1'
@@ -143,7 +141,7 @@ import Habilidades from '../components/Habilidades.astro'
   }
 
   @media (max-width: 450px) {
-    main .proyectos {
+    main #proyectos {
       grid-template-columns: repeat(1, 1fr);
       grid-template-areas:
         'proyecto'

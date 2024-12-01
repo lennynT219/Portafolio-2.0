@@ -1,0 +1,85 @@
+---
+import { formatFecha } from '../assets/helpers/timeLocation'
+import Igithub from '../assets/icon/Igithub.astro'
+import Layout from '../layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import { Image } from 'astro:assets'
+
+const projects = await getCollection('projects')
+---
+
+<Layout title='Proyectos 🧪'>
+  <div class='project-container'>
+    {
+      projects.map(project => {
+        const { name, img, endDate, github, color } = project.data
+        return (
+          <article>
+            <a href={`/proyectos/${project.slug}`} style={`color:${color} ;`}>
+              <Image src={img} alt={name} height={30} width={30} loading='eager' />
+              <h5>{name}</h5>
+              <h5>{formatFecha(endDate)}</h5>
+            </a>
+            <a href={github} class='btn-github'>
+              <Igithub width='20px' height='20px' />
+              <span>Ver codigo fuente</span>
+            </a>
+          </article>
+        )
+      })
+    }
+  </div>
+</Layout>
+
+<style is:global>
+  .project-container {
+    padding: 8px;
+    margin-bottom: 100px;
+    columns: 3;
+    column-gap: 10px;
+    article {
+      break-inside: avoid;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--white);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 4px;
+      margin-bottom: 8px;
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .project-container a {
+    font-family: 'JetBrains Mono', monospace;
+    position: relative;
+    h5 {
+      position: absolute;
+      bottom: 15px;
+      font-size: 14px;
+      font-weight: 100;
+    }
+    h5:nth-child(2) {
+      left: 10px;
+    }
+    h5:last-child {
+      right: 10px;
+      opacity: 0.6;
+    }
+  }
+
+  @media (max-width: 960px) {
+    .project-container {
+      columns: 2;
+    }
+  }
+  @media (max-width: 480px) {
+    .project-container {
+      columns: 1;
+    }
+  }
+</style>
