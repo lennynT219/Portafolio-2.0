@@ -17,8 +17,6 @@ color: white
   preferidos de forma visual e intuitiva.
 - **Visualización de cartelera**: Consulta fácil de las películas disponibles,
   horarios y duración.
-- **Pagos seguros**: Integración de un sistema de pagos confiable y fácil de
-  usar.
 - **Interfaz gráfica**: Construida con **Swing**, proporcionando una
   experiencia visual atractiva y funcional.
 
@@ -28,8 +26,6 @@ color: white
   finales como para los administradores del sistema.
 - **Seguridad**: Login interactivo que protege la información de los
   usuarios.
-- **Eficiencia operativa**: Agiliza el proceso de reservas y pagos en las
-  salas de cine.
 
 ## **Tecnologías Utilizadas**
 

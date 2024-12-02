@@ -27,8 +27,6 @@ gestionar horarios y optimizar recursos.
   de manera sencilla.
 - **Gestión eficiente**: Facilita la organización interna del negocio,
   permitiendo un mejor manejo de los recursos y personal.
-- **Notificaciones**: Recordatorios automáticos para los clientes sobre sus
-  citas.
 - **Interfaz moderna**: Diseño responsivo y amigable, desarrollado con **React**
   y **CSS**, adaptado a cualquier dispositivo.
 
