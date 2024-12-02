@@ -1,16 +1,18 @@
 ---
-import { Icon } from '@iconify/react'
+interface Props {
+  back: string
+}
+import Iback from '../assets/icon/Iback.astro'
+
+const { back } = Astro.props
 ---
 
 <aside>
-  <a class='redirigir' href='/' data-astro-reload>
-    <Icon icon='mingcute:back-line' client:load />
+  <a class='redirigir' href={back} data-astro-reload>
+    <Iback />
     <span>Atras</span>
   </a>
-  <a href='#presentacion'> Presentación </a>
-  <a href='#proyectos'> Proyectos </a>
-  <a href='#habilidades'> Habilidades </a>
-  <a href='#sobre-mi'> Sobre mi </a>
+  <slot />
 </aside>
 
 <style>
@@ -29,7 +31,14 @@ import { Icon } from '@iconify/react'
   }
 
   aside a:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 80px;
+    svg {
+      height: 14px;
+      width: 14px;
+    }
   }
 
   aside a:hover {
@@ -38,7 +47,13 @@ import { Icon } from '@iconify/react'
 
   @media (max-width: 1600px) {
     aside {
-      display: none;
+      position: static;
+      a:not(:first-child) {
+        display: none;
+      }
+    }
+    aside a:first-child {
+      margin-bottom: 0px;
     }
   }
 </style>

@@ -22,7 +22,7 @@ const listColor = `--shadow: 90deg, ${colors.join(', ')}`
 
 <div class='gradient-shadow' style=`grid-area: pro_${key+1}; ${listColor};`>
   <h3>{name}</h3>
-  <p>{description}</p>
+  <p class='prose'>{description}</p>
   <ul>
     {tags.map(tag => <Tag name={tag} />)}
   </ul>

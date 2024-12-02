@@ -10,7 +10,7 @@ import { Image } from 'astro:assets'
 
   <h2>{basics.label}</h2>
 
-  <article>
+  <article class='prose'>
     <span> Con un firme compromiso de llevar mi experiencia al siguiente nivel profesional, </span>
     <span>
       me motiva el aprendizaje constante y la perfección de mis habilidades técnicas y creativas.
@@ -52,11 +52,6 @@ import { Image } from 'astro:assets'
       client:load
     />
   </figure>
-
-  <a href='/' data-astro-reload>
-    <Icon icon='mingcute:back-line' client:load />
-    <span>Atras</span>
-  </a>
 </div>
 
 <style>
@@ -162,28 +157,11 @@ import { Image } from 'astro:assets'
     justify-self: start;
   }
 
-  @media (max-width: 1600px) {
-    div {
-      grid-template-columns: 500px auto;
-      grid-template-rows: 50px auto 50px auto auto;
-      grid-template-areas:
-        'atras atras'
-        'titulo titulo'
-        'dev foto'
-        'resumen foto'
-        'contacto foto';
-    }
-
-    div > a {
-      display: block;
-    }
-  }
   @media (max-width: 660px) {
     div {
       grid-template-columns: auto auto;
-      grid-template-rows: auto auto auto auto auto;
+      grid-template-rows: auto auto auto auto;
       grid-template-areas:
-        'atras atras'
         'titulo titulo'
         'dev foto'
         'resumen foto'

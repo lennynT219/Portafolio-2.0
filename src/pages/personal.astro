@@ -7,11 +7,17 @@ import { projects, skills } from '../assets/json/cv.json'
 import Icode from '../assets/icon/Icode.astro'
 import Itools from '../assets/icon/Itools.astro'
 import Habilidades from '../components/Habilidades.astro'
+import Ibook from '../assets/icon/Ibook.astro'
 ---
 
 <Layout title='Informacion Personal 👨🏽‍💻'>
-  <div class='personal-container'>
-    <Aside />
+  <div class='personal-container main-container'>
+    <Aside back='/'>
+      <a href='#presentacion'> Presentación </a>
+      <a href='#proyectos'> Proyectos </a>
+      <a href='#habilidades'> Habilidades </a>
+      <a href='#sobre-mi'> Sobre mi </a>
+    </Aside>
     <header>
       <Info />
     </header>
@@ -41,8 +47,8 @@ import Habilidades from '../components/Habilidades.astro'
         <h2><Itools />Habilidades</h2>
         <Habilidades list={skills} />
       </section>
-      <section id='sobre-mi'>
-        <h2>Sobre mí</h2>
+      <section id='sobre-mi' class='prose max-w-full'>
+        <h2><Ibook />Sobre mí</h2>
         <p>
           Hola, soy Lenin Masapanta, estudiante de Desarrollo de Software en la Escuela Politécnica
           Nacional (EPN). Mi pasión por el arte y la tecnología me impulsa a explorar diversas
@@ -63,16 +69,6 @@ import Habilidades from '../components/Habilidades.astro'
 </Layout>
 
 <style is:global>
-  .personal-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 720px;
-    margin: 0px auto;
-    gap: 50px;
-    scroll-behavior: smooth;
-    padding: 100px 0px;
-  }
-
   .personal-container main {
     display: flex;
     flex-direction: column;
@@ -118,7 +114,7 @@ import Habilidades from '../components/Habilidades.astro'
 
   #sobre-mi {
     font-size: 16px;
-    font-weight: bold;
+    /* font-weight: bold; */
   }
 
   #sobre-mi h2 {

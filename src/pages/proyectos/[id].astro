@@ -1,0 +1,93 @@
+---
+import { getCollection, render } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+import Aside from '../../components/Aside.astro'
+import { formatFecha } from '../../assets/helpers/timeLocation'
+import Igithub from '../../assets/icon/Igithub.astro'
+import Tag from '../../components/Tag.astro'
+import { Image } from 'astro:assets'
+
+export const getStaticPaths = async () => {
+  const projects = await getCollection('projects')
+  return projects.map(project => ({
+    params: { id: project.slug },
+    props: { project }
+  }))
+}
+const { project } = Astro.props
+const { name, img, endDate, github, technologies } = project.data
+const { Content } = await render(project)
+---
+
+<Layout title={name}>
+  <div class='proyecto main-container'>
+    <Aside back='/proyectos' />
+    <header>
+      <section>
+        <h1 class='font-bold'>{name}</h1>
+        <p class='text-sm text-gray-500'>{formatFecha(endDate)}</p>
+        <ul>
+          {technologies.map(tag => <Tag name={tag} />)}
+        </ul>
+      </section>
+      <a href={github} aria-label='github' target='_blank'><Igithub /></a>
+    </header>
+    <main class='prose max-w-full'>
+      <Image
+        src={img}
+        alt={name}
+        loading='eager'
+        height={30}
+        width={30}
+        transition:name={project.slug}
+      />
+      <Content />
+    </main>
+  </div>
+</Layout>
+
+<style is:global>
+  .proyecto li {
+    list-style-type: circle;
+  }
+  .proyecto header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    section {
+      display: flex;
+      gap: 8px;
+      flex-direction: column;
+      ul {
+        display: flex;
+        gap: 8px;
+      }
+    }
+    a svg {
+      color: var(--dark-gray);
+      background-color: var(--light-gray);
+      padding: 8px;
+      border-radius: 50%;
+      height: 44px;
+      width: 44px;
+      &:hover {
+        animation: jello-horizontal 0.9s both;
+      }
+    }
+  }
+  /* .proyecto main { */
+  /*   max-width: 100% !important; */
+  /* } */
+  .proyecto main img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 720px) {
+    .proyecto {
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+  }
+</style>

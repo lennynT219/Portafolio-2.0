@@ -1,9 +1,9 @@
 ---
-import { formatFecha } from '../assets/helpers/timeLocation'
-import Igithub from '../assets/icon/Igithub.astro'
-import Layout from '../layouts/Layout.astro'
-import { getCollection } from 'astro:content'
 import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
+import { formatFecha } from '../../assets/helpers/timeLocation'
+import Igithub from '../../assets/icon/Igithub.astro'
+import Layout from '../../layouts/Layout.astro'
 
 const projects = await getCollection('projects')
 ---
@@ -16,7 +16,14 @@ const projects = await getCollection('projects')
         return (
           <article>
             <a href={`/proyectos/${project.slug}`} style={`color:${color} ;`}>
-              <Image src={img} alt={name} height={30} width={30} loading='eager' />
+              <Image
+                src={img}
+                alt={name}
+                height={30}
+                width={30}
+                loading='eager'
+                transition:name={project.slug}
+              />
               <h5>{name}</h5>
               <h5>{formatFecha(endDate)}</h5>
             </a>

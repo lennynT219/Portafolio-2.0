@@ -94,6 +94,16 @@ const { title } = Astro.props
     font-size: 12.5px;
   }
 
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0px auto;
+    gap: 50px;
+    scroll-behavior: smooth;
+    padding: 100px 0px;
+  }
+
   .btn-github:hover {
     background-color: var(--medium-gray);
     svg {

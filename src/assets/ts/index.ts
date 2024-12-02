@@ -2,7 +2,7 @@ import { $ } from '../helpers/selector.ts'
 import { dragDisplay, resetDragState, updateTransform } from '../helpers/display.ts'
 import { getHora, getLocation, getSize } from '../helpers/timeLocation.ts'
 
-const mainContainer = $('.main-container')!
+const mainContainer = $('.index-container')!
 const size = $('.size')!
 const hora = $('.hora')!
 const ubicacion = $('.ubicacion')!
@@ -40,6 +40,6 @@ mainContainer.addEventListener('mouseup', e => {
 getHora(hora)
 
 const mostrarUbicacion = async () => {
-  ubicacion.textContent = await getLocation()
+  ubicacion.textContent = getLocation()
 }
 mostrarUbicacion()

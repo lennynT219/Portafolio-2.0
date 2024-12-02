@@ -6,7 +6,7 @@ import { letters } from '../assets/icon/letters'
 ---
 
 <Layout title='Software Developer 👨🏽‍💻'>
-  <div class='main-container'>
+  <div class='index-container'>
     {letters.map(props => <Letters {...props} />)}
     <HomeGrid />
   </div>
@@ -17,7 +17,7 @@ import { letters } from '../assets/icon/letters'
 
 <script src='../assets/ts/index.ts'></script>
 <style is:global>
-  .main-container {
+  .index-container {
     display: grid;
     cursor: grab;
     grid-template-columns: repeat(26, 1fr);
