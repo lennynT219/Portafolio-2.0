@@ -214,6 +214,24 @@
       ]
     },
     {
+      "name": "OdontoPlus",
+      "startDate": "2024-11-20",
+      "endDate": "2025-01-06",
+      "description": "Aplicación web en Java basada en el modelo por capas, que utiliza JSP para la presentación, Servlets para la lógica de negocio y JPA para la capa de acceso a datos.",
+      "github": "https://github.com/lennynT219/Odo_Sistema.git",
+      "url": false,
+      "img": "/odoplus.webp",
+      "technologies": ["java", "mssql", "js", "css"],
+      "colors": [
+        "var(--blue-jeans)",
+        "var(--gray)",
+        "var(--dark-gray)",
+        "var(--blue-jeans)",
+        "var(--red)"
+      ]
+    },
+
+    {
       "name": "CineClub",
       "startDate": "2023-03-16",
       "endDate": "2023-05-20",
